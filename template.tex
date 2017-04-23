@@ -1,0 +1,140 @@
+
+%%%% Eingebundene Pakete %%%% 
+\usepackage{xltxtra}
+
+\usepackage{scrhack} 
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{xfrac} % \sfrac{}{} für Brueche
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{scrlayer-scrpage}
+\usepackage{wallpaper}
+\usepackage{ulem}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{chngcntr}
+
+%% Sorgt dafür, dass Kapitel neue Kapitel nicht auf einer neuen rechten Seite anfangen
+\RedeclareSectionCommand[style=section,indent=0pt]{chapter}
+
+%% Definition der Auto Intern Farben (Das AIschwarz wir im Fließtext nicht benutzt, stattdessen ist normales schwarz gesetzt (schwarze Tinte beim Druck günstiger)
+\definecolor{THrot}{RGB}{228,0,30}
+\definecolor{THblau}{RGB}{0,61,125}
+
+
+
+%% Auto-Intern vereinfachte Befehle für Schriftarten
+\newcommand{\mainfont}{\setmainfont{Lato-Regular.ttf}}
+\newcommand{\LatoReg}{\setmainfont{Lato-Regular.ttf}}
+\newcommand{\DaysOne}{\setmainfont{DaysOne-Regular.ttf}}
+\newcommand{\LatoBold}{\setmainfont{Lato-Bold.ttf}}
+\newcommand{\Avenir}{\setmainfont{AvenirLTStd-Book.otf}}
+\newcommand{\LatoBlack}{\setmainfont{Lato-Black.ttf}}
+
+%% Auto-Intern vereinfachte Befhele für Sprachwechsel eng - de
+\newcommand{\Deutsch}{\usepackage[ngerman]{babel}
+\renewcaptionname{ngerman}{\contentsname}{Inhaltsverzeichnis} % Standard: Inhaltsverzeichnis
+\renewcaptionname{ngerman}{\listfigurename}{Abbildungsverzeichnis} % Standard: Abbildungsverzeichnis
+\renewcaptionname{ngerman}{\listtablename}{Tabellenverzeichnis} % Standard: Tabellenverzeichnis
+\renewcaptionname{ngerman}{\figurename}{Abbildung} % Standard: Abbildung
+\renewcaptionname{ngerman}{\tablename}{Tabelle} % Standard: Tabelle
+}
+
+
+%% Auto-Intern vereinfachte Befehle für Textsatz
+\newcommand{\Kursiv}[1]{\setmainfont{Lato-Italic.ttf}#1 \mainfont}
+\newcommand{\Fett}[1]{\setmainfont{Lato-Bold.ttf}#1 \mainfont}
+\newcommand{\FettKursiv}[1]{\setmainfont{Lato-BoldItalic.ttf}#1 \mainfont}
+\newcommand{\Hoch}[1]{$^{\text{#1}}$}
+\newcommand{\Tief}[1]{$_{\text{#1}}$}
+
+%% Auto-Intern vereinfacht Befehle für Kapitel usw, um differenzierung zwischen Inhaltsverzeichnis und Text zu haben
+\newcommand{\AItitlefont}{\LatoBold}
+\newcommand{\Chapter}[1]{\chapter[#1]{\AItitlefont #1}}
+\newcommand{\Section}[1]{\section[#1]{\AItitlefont #1}}
+\newcommand{\Subsection}[1]{\subsection[#1]{\AItitlefont #1}}
+\newcommand{\Subsubsection}[1]{\subsubsection[#1]{\AItitlefont #1}}
+\newcommand{\Paragraph}[1]{\paragraph[#1]{\AItitlefont #1}}
+\newcommand{\Subparagraph}[1]{\subparagraph[#1]{\AItitlefont #1}}
+
+%% Einstellungen für Kopf- und Fußzeilen
+\newcommand{\HeadAVier}{
+\setlength{\footheight}{-1cm}
+\setlength{\skip\footins}{5mm}
+\setkomafont{pageheadfoot}{\setmainfont{Lato-Regular.ttf}} %Schriftart für Kopfzeile
+\setkomafont{pagehead}{\setmainfont{Lato-Regular.ttf}} % Schriftart für Fußzeile
+\pagestyle{scrheadings} % Seitenstil
+\ihead{\includegraphics[height=2cm]{../TemplateGraphics/Logo300.jpg}} % Innere Kopfzeile 7cm
+\ohead{}
+\chead{}
+}
+
+
+\newcommand{\ImpFootAVier}{
+\ofoot{\LatoBlack \fach} % Äußere Fußzeile
+\cfoot{}
+\ifoot{
+}}
+
+
+\newcommand{\NormFoot}{
+	\ifoot{\scriptsize% Innere Fußzeile
+	\begin{tabular}{ll}
+	\matrikel - \name\\%
+	\matrikelpartner - \namepartner\\%
+	Betreut durch: \betreuer
+	\end{tabular}
+	}
+	\ofoot{\LatoBlack \fach\\ \versuchsbezeichnung \semester}
+	\cfoot{\pagemark}
+}
+
+\newcommand{\EmptyFoot}{
+\ifoot{}
+\ofoot{}
+\cfoot{}
+}
+%% Anderung der Schriftarten für Titelbeschriftungen
+\usepackage{tocloft}
+\setkomafont{disposition}{\AItitlefont\color{THblau}}  % farbe: ueberschrift
+\renewcommand{\cfttoctitlefont}{\LatoBold \Large \color{THblau}}
+\renewcommand{\cftpartfont}{\LatoReg}
+\renewcommand{\cftchapfont}{\LatoReg}
+\renewcommand{\cftsecfont}{\LatoReg}
+\renewcommand{\cftsubsecfont}{\LatoReg}
+\renewcommand{\cftsubsubsecfont}{\LatoReg}
+\renewcommand{\cftparafont}{\LatoReg}
+\renewcommand{\cftsubparafont}{\LatoReg}
+\renewcommand{\cftfigfont}{\LatoReg}
+%\renewcommand{\cftsubfigfont}{\LatoReg}
+\renewcommand{\cfttabfont}{\LatoReg}
+%\renewcommand{\cftsubtabfont}{\LatoReg}
+
+
+
+\addtocontents{toc}{\protect\thispagestyle{scrheadings}}
+\newcommand{\AVier}{
+\HeadAVier
+\ImpFootAVier
+\AItitlefont
+\addtolength{\wpYoffset}{-3cm}
+\ThisCenterWallPaper{0.7}{../TemplateGraphics/Kopf.pdf}%
+{\color{white}.}\\
+\vspace{3.5cm}
+\begin{center}
+{{\huge \titelname  zu \versuchsbezeichnung} \\ \LatoReg \versuchsname\\ \vspace{40mm} durchgeführt von \\ \Fett \matrikel \LatoReg \name \\ \Fett \matrikelpartner \LatoReg \namepartner \\ im \semester am \datum \\ \vspace{10mm} Betreut durch: \betreuer \\ Dozent: \dozent}
+\end{center}
+\newpage
+\mainfont
+\NormFoot
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\ohead{\thepage}
+}

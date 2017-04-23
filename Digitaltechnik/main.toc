@@ -1,0 +1,2 @@
+\thispagestyle {scrheadings}
+\select@language {ngerman}
