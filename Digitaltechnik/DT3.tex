@@ -1,0 +1,184 @@
+% File: main.tex
+% Author: Auto-Intern GmbH
+% Manuals template
+
+\newcommand{\fach}{Digitaltechnikpraktikum }
+\newcommand{\titelname}{Versuchsprotokoll }
+\newcommand{\matrikel}{2016507006 }
+\newcommand{\name}{Olbrich, Marie }
+
+\newcommand{\matrikelpartner}{2016506999 }
+\newcommand{\namepartner}{Hoffmann, Manuel }
+
+\newcommand{\versuchsbezeichnung}{DT3 }
+\newcommand{\versuchsname}{Untersuchung von Flip-Flop-Arten }
+\newcommand{\semester}{SS17 }
+\newcommand{\datum}{18.04.2017 }
+\newcommand{\betreuer}{M.Sc. Kruse }
+\newcommand{\dozent}{M.Sc. Richthofer }
+
+\documentclass[a4paper, 11pt, fleqn, DIV=10, twoside, BCOR=10mm]{scrreprt}
+\usepackage{diagbox}
+
+\input{../template.tex}
+\Deutsch
+\begin{document} 
+\AVier
+
+\chapter{Vorbereitende Aufgaben}
+\section{SR-Flip-Flop}
+
+\begin{center}
+
+\begin{tabular}{c|c|c|c|c}
+S&R&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
+\hline
+0&0&0&0&Speichern\\
+0&0&1&1&Speichern\\
+0&1&0&0&Rücksetzen\\
+0&1&1&0&Rücksetzen\\
+1&0&0&1&Setzen\\
+1&0&1&1&Setzen\\
+1&1&0&-&Verboten\\
+1&1&1&-&Verboten\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle SR-Flip-Flop}
+
+\vspace{15mm}
+
+\begin{tabular}{c|c|c|c|c}
+\diagbox{Q\textsubscript{n}}{SR}&00&01&11&10\\
+\hline
+0& & & &1\\
+\hline
+1&1& & &1\\
+\end{tabular}
+\captionof{table}{KV-Diagramm SR-Flip-Flop}
+
+\vspace{15mm}
+
+Charakteristische Gleichung des SR-Flip-Flops als konjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( \overline{S} \vee R)\wedge (R \vee \overline{Q \textsubscript{n}})
+\end{equation}
+
+\includegraphics[width=0.3\columnwidth]{DT3Graphics/SR-FF-NOR.PNG}
+\captionof{figure}{Realisierung in NOR-Technik}
+
+Charakteristische Gleichung des SR-Flip-Flops als disjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( S\wedge \overline{R})\vee (\overline{R} \wedge Q \textsubscript{n})
+\end{equation}
+
+\includegraphics[width=0.4\columnwidth]{DT3Graphics/SR-FF-NAND.PNG}
+\captionof{figure}{Realisierung in NAND-Technik}
+	
+
+\section{E-Flip-Flop}
+
+
+\begin{tabular}{c|c|c|c|c}
+E1&E2&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
+\hline
+0&0&0&0&Speichern\\
+0&0&1&1&Speichern\\
+0&1&0&0&Rücksetzen\\
+0&1&1&0&Rücksetzen\\
+1&0&0&1&Setzen\\
+1&0&1&1&Setzen\\
+1&1&0&0&Speichern\\
+1&1&1&1&Speichern\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle E-Flip-Flop}
+
+\vspace{15mm}
+
+\begin{tabular}{c|c|c|c|c}
+\diagbox{Q\textsubscript{n}}{E1E2}&00&01&11&10\\
+\hline
+ & & & &1\\
+\hline
+1&1&0&1&1\\
+\end{tabular}
+\captionof{table}{KV-Diagramm E-Flip-Flop}
+
+\vspace{15mm}
+
+Charakteristische Gleichung des E-Flip-Flops als konjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( \overline{E1} \vee E2)\wedge (\overline{E1}\vee \overline{Q \textsubscript{n}}) \wedge (E2 \vee \overline{Q \textsubscript{n}})
+\end{equation}
+
+\includegraphics[width=0.5\columnwidth]{DT3Graphics/E-FF-NOR.PNG}
+\captionof{figure}{Realisierung in NOR-Technik}
+
+Charakteristische Gleichung des E-Flip-Flops als disjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( E1\wedge \overline{E2})\vee (E1 \wedge Q \textsubscript{n}) \vee (\overline{E2} \wedge Q \textsubscript{n})
+\end{equation}
+
+\includegraphics[width=0.5\columnwidth]{DT3Graphics/E-FF-NAND.PNG}
+\captionof{figure}{Realisierung in NAND-Technik}
+
+\section{D-Flip-Flop}
+
+
+\begin{tabular}{c|c|c|c|c}
+D&C&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
+\hline
+0&0&0&0&Speichern\\
+0&0&1&1&Speichern\\
+0&1&0&0&Rücksetzen\\
+0&1&1&0&Rücksetzen\\
+1&0&0&0&Speichern\\
+1&0&1&1&Speichern\\
+1&1&0&1&Setzen\\
+1&1&1&1&Setzen\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle D-Flip-Flop}
+
+\vspace{15mm}
+
+\begin{tabular}{c|c|c|c|c}
+\diagbox{Q\textsubscript{n}}{DC}&00&01&11&10\\
+\hline
+ & & &1& \\
+\hline
+1&1&0&1&1\\
+\end{tabular}
+\captionof{table}{KV-Diagramm D-Flip-Flop}
+
+\vspace{15mm}
+
+Charakteristische Gleichung des D-Flip-Flops als konjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( \overline{D} \vee \overline{Q \textsubscript{n}})\wedge (\overline{D}\vee \overline{C}) \wedge (C \vee \overline{Q \textsubscript{n}})
+\end{equation}
+
+\includegraphics[width=0.5\columnwidth]{DT3Graphics/D-FF-NOR.PNG}
+\captionof{figure}{Realisierung in NOR-Technik}
+
+Charakteristische Gleichung des D-Flip-Flops als disjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( D\wedge Q \textsubscript{n} )\vee (D \wedge C) \vee (\overline{C} \wedge Q \textsubscript{n})
+\end{equation}
+
+\includegraphics[width=0.5\columnwidth]{DT3Graphics/D-FF-NAND.PNG}
+\captionof{figure}{Realisierung in NAND-Technik}
+\end{center}
+\chapter{Kritische Schlussbetrachtung}
+\section{Olbrich, Marie}
+ \input{DT3Marie.tex}
+\section{Hoffmann, Manuel}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Hier fängt der Text an %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
