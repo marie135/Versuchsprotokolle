@@ -27,9 +27,7 @@
 
 \chapter{Vorbereitende Aufgaben}
 \section{SR-Flip-Flop}
-
 \begin{center}
-
 \begin{tabular}{c|c|c|c|c}
 S&R&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
 \hline
@@ -43,9 +41,17 @@ S&R&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
 1&1&1&-&Verboten\\
 \end{tabular}
 \captionof{table}{Wahrheitstabelle SR-Flip-Flop}
-
-\vspace{15mm}
-
+\vspace{20mm}
+\begin{tabular}{c|c|c|c}
+S&R&Q\textsubscript{n+1}&Bemerkung\\
+\hline
+0&0&Q\textsubscript{n}&Speichern\\
+0&1&0&Rücksetzen\\
+1&0&1&Setzen\\
+1&1&-&Verboten\\
+\end{tabular}
+\captionof{table}{Komprimierte Wahrheitstabelle SR-Flip-Flop}
+\vspace{20mm}
 \begin{tabular}{c|c|c|c|c}
 \diagbox{Q\textsubscript{n}}{SR}&00&01&11&10\\
 \hline
@@ -54,29 +60,24 @@ S&R&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
 1&1& & &1\\
 \end{tabular}
 \captionof{table}{KV-Diagramm SR-Flip-Flop}
-
-\vspace{15mm}
-
+\newpage
 Charakteristische Gleichung des SR-Flip-Flops als konjunktive Normalform:
 \begin{equation}
 	Q\textsubscript{n+1}:=( \overline{S} \vee R)\wedge (R \vee \overline{Q \textsubscript{n}})
 \end{equation}
-
 \includegraphics[width=0.3\columnwidth]{DT3Graphics/SR-FF-NOR.PNG}
 \captionof{figure}{Realisierung in NOR-Technik}
-
+\vspace{20mm}
 Charakteristische Gleichung des SR-Flip-Flops als disjunktive Normalform:
 \begin{equation}
 	Q\textsubscript{n+1}:=( S\wedge \overline{R})\vee (\overline{R} \wedge Q \textsubscript{n})
 \end{equation}
-
 \includegraphics[width=0.4\columnwidth]{DT3Graphics/SR-FF-NAND.PNG}
 \captionof{figure}{Realisierung in NAND-Technik}
-	
+\subsection*{Arbeitsweise}
+Liegt an beiden Eingängen (S und R) eine 0 an tritt der Speicherfall ein, das heißt der Zustand bleibt. Liegt an S eine null und an R eine 1 an, schaltet der Flip-Flop auf 0, unabhängig von dem vorherigen Zustand (Rücksetzen). Liegt an S eine 1 und an R eine 0 an, schaltet der Flip-Flop auf 1 (Setzen). Dass an beiden Eingängen eine 1 anliegt ist der verbotene Fall. 
 
 \section{E-Flip-Flop}
-
-
 \begin{tabular}{c|c|c|c|c}
 E1&E2&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
 \hline
@@ -90,39 +91,34 @@ E1&E2&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
 1&1&1&1&Speichern\\
 \end{tabular}
 \captionof{table}{Wahrheitstabelle E-Flip-Flop}
-
-\vspace{15mm}
-
+\vspace{20mm}
 \begin{tabular}{c|c|c|c|c}
 \diagbox{Q\textsubscript{n}}{E1E2}&00&01&11&10\\
 \hline
- & & & &1\\
+0& & & &1\\
 \hline
-1&1&0&1&1\\
+1&1&&1&1\\
 \end{tabular}
 \captionof{table}{KV-Diagramm E-Flip-Flop}
-
-\vspace{15mm}
-
+\vspace{20mm}
 Charakteristische Gleichung des E-Flip-Flops als konjunktive Normalform:
 \begin{equation}
 	Q\textsubscript{n+1}:=( \overline{E1} \vee E2)\wedge (\overline{E1}\vee \overline{Q \textsubscript{n}}) \wedge (E2 \vee \overline{Q \textsubscript{n}})
 \end{equation}
-
 \includegraphics[width=0.5\columnwidth]{DT3Graphics/E-FF-NOR.PNG}
 \captionof{figure}{Realisierung in NOR-Technik}
-
+\vspace{20mm}
 Charakteristische Gleichung des E-Flip-Flops als disjunktive Normalform:
 \begin{equation}
 	Q\textsubscript{n+1}:=( E1\wedge \overline{E2})\vee (E1 \wedge Q \textsubscript{n}) \vee (\overline{E2} \wedge Q \textsubscript{n})
 \end{equation}
-
 \includegraphics[width=0.5\columnwidth]{DT3Graphics/E-FF-NAND.PNG}
 \captionof{figure}{Realisierung in NAND-Technik}
+\vspace{-5mm}
+\subsection*{Arbeitsweise}
+Der E-Flip-Flop ist ein erweiteter SR-Flip-Flop. Der Unterschied ist, dass er auch speichert wenn beide Eingänge 1 sind.
 
 \section{D-Flip-Flop}
-
-
 \begin{tabular}{c|c|c|c|c}
 D&C&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
 \hline
@@ -142,9 +138,9 @@ D&C&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
 \begin{tabular}{c|c|c|c|c}
 \diagbox{Q\textsubscript{n}}{DC}&00&01&11&10\\
 \hline
- & & &1& \\
+0& & &1& \\
 \hline
-1&1&0&1&1\\
+1&1& &1&1\\
 \end{tabular}
 \captionof{table}{KV-Diagramm D-Flip-Flop}
 
@@ -157,7 +153,7 @@ Charakteristische Gleichung des D-Flip-Flops als konjunktive Normalform:
 
 \includegraphics[width=0.5\columnwidth]{DT3Graphics/D-FF-NOR.PNG}
 \captionof{figure}{Realisierung in NOR-Technik}
-
+\vspace{20mm}
 Charakteristische Gleichung des D-Flip-Flops als disjunktive Normalform:
 \begin{equation}
 	Q\textsubscript{n+1}:=( D\wedge Q \textsubscript{n} )\vee (D \wedge C) \vee (\overline{C} \wedge Q \textsubscript{n})
@@ -165,11 +161,94 @@ Charakteristische Gleichung des D-Flip-Flops als disjunktive Normalform:
 
 \includegraphics[width=0.5\columnwidth]{DT3Graphics/D-FF-NAND.PNG}
 \captionof{figure}{Realisierung in NAND-Technik}
+
+\vspace{10mm}
+\subsection*{Arbeitsweise}
+Der D-Flip-Flop ist ein taktzustandsgesteuerter Flip-Flop. Das heißt, dass am Takt eine eins anliegen muss, damit der Flip-Flop setzt oder rücksetzt. Liegt am Takt Eingang C eine null an wird gespeichert. Liegt an C eine 1 und an D eine 0 an, tritt der Rücksetzen Fall ein. Liegt an C und D eine 1 an, wird der Flip-Flop gesetzt. 
+\newpage
+\section{T-Flip-Flop}
+\begin{tabular}{c|c|c|c}
+T&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
+\hline
+0&0&0&Speichern\\
+0&1&1&Speichern\\
+1&0&1&Umschalten\\
+1&1&0&Umschalten\\
+
+\end{tabular}
+\captionof{table}{Wahrheitstabelle T-Flip-Flop}
+\vspace{10mm}
+\begin{tabular}{c|c|c}
+\diagbox{Q\textsubscript{n}}{T}&0&1\\
+\hline
+0& &1\\
+\hline
+1&1& \\
+\end{tabular}
+\captionof{table}{KV-Diagramm T-Flip-Flop}
+\vspace{10mm}
+
+Charakteristische Gleichung des T-Flip-Flops als konjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( T \vee \overline{Q \textsubscript{n}})\wedge (\overline{T} \vee  Q \textsubscript{n})
+\end{equation}
+\vspace{5mm}
+
+Charakteristische Gleichung des T-Flip-Flops als disjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( \overline{T}\wedge Q \textsubscript{n} )\vee (T \wedge \overline{Q \textsubscript{n}}) 
+\end{equation}
+
+\section{JK-Flip-Flop}
+\begin{tabular}{c|c|c|c|c}
+J&K&Q\textsubscript{n}&Q \textsubscript{n+1}&Bemerkung\\
+\hline
+0&0&0&0&save\\
+0&0&1&1&save\\
+0&1&0&0&kill\\
+0&1&1&0&kill\\
+1&0&0&1&jump\\
+1&0&1&1&jump\\
+1&1&0&0&toggle\\
+1&1&1&1&toggle\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle JK-Flip-Flop}
+\begin{tabular}{c|c|c|c}
+J&K&Q \textsubscript{n+1}&Bemerkung\\
+\hline
+0&0&Q\textsubscript{n}&save\\
+0&1&0&kill\\
+1&0&1&jump\\
+1&1&$\overline{\hbox{Q \textsubscript{n}}}$&toggle\\
+\end{tabular}
+\captionof{table}{Komprimierte Wahrheitstabelle JK-Flip-Flop}
+\vspace{10mm}
+\begin{tabular}{c|c|c|c|c}
+\diagbox{Q\textsubscript{n}}{JK}&00&01&11&10\\
+\hline
+0& & &1&1\\
+\hline
+1&1& & &1\\
+\end{tabular}
+\captionof{table}{KV-Diagramm JK-Flip-Flop}
+\vspace{10mm}
+Charakteristische Gleichung des JK-Flip-Flops als konjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( \overline{J} \vee Q \textsubscript{n})\wedge (\overline{J}\vee K) \wedge (K \vee \overline{Q \textsubscript{n}})
+\end{equation}
+\vspace{5mm}
+
+Charakteristische Gleichung des JK-Flip-Flops als disjunktive Normalform:
+\begin{equation}
+	Q\textsubscript{n+1}:=( J\wedge \overline{Q \textsubscript{n}} )\vee (J \wedge \overline{K}) \vee (\overline{K} \wedge Q \textsubscript{n})
+\end{equation}
 \end{center}
+\newpage
 \chapter{Kritische Schlussbetrachtung}
 \section{Olbrich, Marie}
  \input{DT3Marie.tex}
 \section{Hoffmann, Manuel}
+ \input{DT3Manuel.tex}
 
 
 
