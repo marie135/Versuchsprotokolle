@@ -1,0 +1,12 @@
+\thispagestyle {scrheadings}
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Vorbereitende Aufgaben}{1}
+\contentsline {section}{\numberline {1.1}SR-Flip-Flop}{1}
+\contentsline {section}{\numberline {1.2}E-Flip-Flop}{3}
+\contentsline {section}{\numberline {1.3}D-Flip-Flop}{4}
+\contentsline {section}{\numberline {1.4}T-Flip-Flop}{6}
+\contentsline {section}{\numberline {1.5}JK-Flip-Flop}{6}
+\contentsline {chapter}{\numberline {2}Kritische Schlussbetrachtung}{8}
+\contentsline {section}{\numberline {2.1}Olbrich, Marie}{8}
+\contentsline {section}{\numberline {2.2}Hoffmann, Manuel}{9}
+\contentsline {chapter}{\numberline {3}Literaturverzeichnis}{9}

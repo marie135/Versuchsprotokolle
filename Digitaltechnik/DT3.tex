@@ -74,9 +74,10 @@ Charakteristische Gleichung des SR-Flip-Flops als disjunktive Normalform:
 \end{equation}
 \includegraphics[width=0.4\columnwidth]{DT3Graphics/SR-FF-NAND.PNG}
 \captionof{figure}{Realisierung in NAND-Technik}
+\end{center}
 \subsection*{Arbeitsweise}
-Liegt an beiden Eingängen (S und R) eine 0 an tritt der Speicherfall ein, das heißt der Zustand bleibt. Liegt an S eine null und an R eine 1 an, schaltet der Flip-Flop auf 0, unabhängig von dem vorherigen Zustand (Rücksetzen). Liegt an S eine 1 und an R eine 0 an, schaltet der Flip-Flop auf 1 (Setzen). Dass an beiden Eingängen eine 1 anliegt ist der verbotene Fall. 
-
+Liegt an beiden Eingängen (S und R) eine null an tritt der Speicherfall ein, das heißt der Zustand bleibt. Liegt an S eine null und an R eine eins an, schaltet der Flip-Flop unabhängig von dem vorherigen Zustand auf null (Rücksetzen). Liegt an S eine eins und an R eine null an, schaltet der Flip-Flop auf eins (Setzen). Dass an beiden Eingängen eine eins anliegt ist der verbotene Fall. 
+\begin{center}
 \section{E-Flip-Flop}
 \begin{tabular}{c|c|c|c|c}
 E1&E2&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
@@ -115,9 +116,10 @@ Charakteristische Gleichung des E-Flip-Flops als disjunktive Normalform:
 \includegraphics[width=0.5\columnwidth]{DT3Graphics/E-FF-NAND.PNG}
 \captionof{figure}{Realisierung in NAND-Technik}
 \vspace{-5mm}
+\end{center}
 \subsection*{Arbeitsweise}
-Der E-Flip-Flop ist ein erweiteter SR-Flip-Flop. Der Unterschied ist, dass er auch speichert wenn beide Eingänge 1 sind.
-
+Der E-Flip-Flop ist ein erweiteter SR-Flip-Flop. Der einzige Unterschied ist, dass es den verbotenen Fall nicht gibt. Liegt an beiden Eingängen eine eins an, speichert der E-Flip-Flop.
+\begin{center}
 \section{D-Flip-Flop}
 \begin{tabular}{c|c|c|c|c}
 D&C&Q\textsubscript{n}&Q\textsubscript{n+1}&Bemerkung\\
@@ -158,13 +160,13 @@ Charakteristische Gleichung des D-Flip-Flops als disjunktive Normalform:
 \begin{equation}
 	Q\textsubscript{n+1}:=( D\wedge Q \textsubscript{n} )\vee (D \wedge C) \vee (\overline{C} \wedge Q \textsubscript{n})
 \end{equation}
-
 \includegraphics[width=0.5\columnwidth]{DT3Graphics/D-FF-NAND.PNG}
 \captionof{figure}{Realisierung in NAND-Technik}
-
 \vspace{10mm}
+\end{center}
 \subsection*{Arbeitsweise}
-Der D-Flip-Flop ist ein taktzustandsgesteuerter Flip-Flop. Das heißt, dass am Takt eine eins anliegen muss, damit der Flip-Flop setzt oder rücksetzt. Liegt am Takt Eingang C eine null an wird gespeichert. Liegt an C eine 1 und an D eine 0 an, tritt der Rücksetzen Fall ein. Liegt an C und D eine 1 an, wird der Flip-Flop gesetzt. 
+Der D-Flip-Flop ist ein taktzustandsgesteuerter Flip-Flop. Das heißt, dass am Takt eine eins anliegen muss, damit der Flip-Flop setzt oder rücksetzt. Liegt am Takt Eingang C eine null an wird gespeichert. Liegt an C eine eins und an D eine null an, tritt der Rücksetzen Fall ein. Es wird also auf null geschaltet. Liegt an C und D eine eins an, wird der Flip-Flop gesetzt, also schaltet er auf eins.
+\begin{center}
 \newpage
 \section{T-Flip-Flop}
 \begin{tabular}{c|c|c|c}
@@ -249,6 +251,8 @@ Charakteristische Gleichung des JK-Flip-Flops als disjunktive Normalform:
  \input{DT3Marie.tex}
 \section{Hoffmann, Manuel}
  \input{DT3Manuel.tex}
+\chapter{Literaturverzeichnis}
+Klaus Beuth: Digitaltechnik, Vogel, 13. Auflage, 2006
 
 
 
