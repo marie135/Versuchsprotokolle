@@ -1,0 +1,7 @@
+\thispagestyle {scrheadings}
+\select@language {ngerman}
+\contentsline {chapter}{\numberline {1}Vorbereitende Aufgaben}{1}
+\contentsline {chapter}{\numberline {2}Versuchsdurchführung}{3}
+\contentsline {chapter}{\numberline {3}Kritische Schlussbetrachtung}{3}
+\contentsline {section}{\numberline {3.1}Olbrich, Marie}{3}
+\contentsline {section}{\numberline {3.2}Hoffmann, Manuel}{3}
