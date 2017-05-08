@@ -9,20 +9,66 @@
 \newcommand{\matrikelpartner}{2015516619 }
 \newcommand{\namepartner}{Hoffmann, Manuel }
 
-\newcommand{\versuchsbezeichnung}{DT3 }
-\newcommand{\versuchsname}{Untersuchung von Flip-Flop-Arten }
+\newcommand{\versuchsbezeichnung}{DT2 }
+\newcommand{\versuchsname}{Schaltungstechnische Realisierung eines seriellen 4-Bit-Rechenwerkes }
 \newcommand{\semester}{SS17 }
-\newcommand{\datum}{18.04.2017 }
+\newcommand{\datum}{02.05.2017 und 09.05.2017 }
 \newcommand{\betreuer}{M.Sc. Kruse }
 \newcommand{\dozent}{M.Sc. Richthofer }
 
 \documentclass[a4paper, 11pt, fleqn, DIV=10, twoside, BCOR=10mm]{scrreprt}
+\usepackage{diagbox}
 \input{../template.tex}
 \Deutsch
 \begin{document} 
 \AVier
-
-
+\begin{center}
+\chapter{Vorbereitende Aufgaben}
+\begin{tabular}{c|c||c|c}
+S1&S2&E&Ü\\
+\hline
+0&0&0&0\\
+0&1&1&0\\
+1&0&1&0\\
+1&1&0&1\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle Halbaddierer}
+\begin{equation}
+	E:=(\overline{S1} \wedge S2) \vee (S1 \wedge \overline{S2})
+\end{equation}
+\begin{equation}
+	"U:=S1 \wedge S2
+\end{equation}
+%
+\begin{tabular}{c|c||c|c}
+S1&S2&E&Ü\\
+\hline
+0&0&0&0\\
+0&1&1&1\\
+1&0&1&0\\
+1&1&0&0\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle Halbsubtrahierer}
+\begin{equation}
+	D:= (S \wedge \overline{M}) \vee (\overline{S} \wedge M)
+\end{equation}
+\begin{equation}
+	E:= S \wedge \overline{M}
+\end{equation}
+\end{center}
+%
+\begin{tabular}{c|c|c||c|c}
+S1&S2&ÜE&E&ÜA\\
+\hline
+0&0&0&0&0\\
+0&0&1&1&0\\
+0&1&0&1&0\\
+0&1&1&0&1\\
+1&0&0&1&0\\
+1&0&1&0&1\\
+1&1&0&0&1\\
+1&1&1&1&1\\
+\end{tabular}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
