@@ -6,7 +6,7 @@
 \newcommand{\matrikel}{2016507006 }
 \newcommand{\name}{Olbrich, Marie }
 
-\newcommand{\matrikelpartner}{2015516619 }
+\newcommand{\matrikelpartner}{2016506999 }
 \newcommand{\namepartner}{Hoffmann, Manuel }
 
 \newcommand{\versuchsbezeichnung}{DT2 }
@@ -24,6 +24,8 @@
 \AVier
 \begin{center}
 \chapter{Vorbereitende Aufgaben}
+\section{Addierer}
+\subsection{Halbaddierer}
 \begin{tabular}{c|c||c|c}
 S1&S2&E&Ü\\
 \hline
@@ -33,30 +35,32 @@ S1&S2&E&Ü\\
 1&1&0&1\\
 \end{tabular}
 \captionof{table}{Wahrheitstabelle Halbaddierer}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{S2}{S1}&0&1\\
+\hline
+0&0&1\\
+\hline
+1&1&0\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Halbaddierer Ergebnis}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{S2}{S1}&0&1\\
+\hline
+0&0&0\\
+\hline
+1&0&1\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Halbaddierer Übertrag}
 \begin{equation}
 	E:=(\overline{S1} \wedge S2) \vee (S1 \wedge \overline{S2})
 \end{equation}
 \begin{equation}
 	"U:=S1 \wedge S2
 \end{equation}
-%
-\begin{tabular}{c|c||c|c}
-S1&S2&E&Ü\\
-\hline
-0&0&0&0\\
-0&1&1&1\\
-1&0&1&0\\
-1&1&0&0\\
-\end{tabular}
-\captionof{table}{Wahrheitstabelle Halbsubtrahierer}
-\begin{equation}
-	D:= (S \wedge \overline{M}) \vee (\overline{S} \wedge M)
-\end{equation}
-\begin{equation}
-	E:= S \wedge \overline{M}
-\end{equation}
-\end{center}
-%
+\newpage
+\subsection{Volladdierer}
 \begin{tabular}{c|c|c||c|c}
 S1&S2&ÜE&E&ÜA\\
 \hline
@@ -69,6 +73,144 @@ S1&S2&ÜE&E&ÜA\\
 1&1&0&0&1\\
 1&1&1&1&1\\
 \end{tabular}
+\captionof{table}{Wahrheitstabelle Volladdierer}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{S1S2}{ÜE}&0&1\\
+\hline
+00&0&1\\
+\hline
+01&1&0\\
+\hline
+11&0&1\\
+\hline
+10&1&0\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Volladdierer Ergebnis}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{S1S2}{ÜE}&0&1\\
+\hline
+00&0&0\\
+\hline
+01&0&1\\
+\hline
+11&1&1\\
+\hline
+10&0&1\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Volladdierer Übertrag Ausgang}
+	\begin{equation}
+	E:= ("UE \wedge \overline{S1} \wedge \overline{S2}) \vee (\overline{"UE} \wedge \overline{S1} \wedge S2) \vee ("UE \wedge S1 \wedge S2) \vee ("UE \wedge S1 \wedge \overline{S2})
+	\end{equation}
+	\begin{equation}
+	"UA:= (S1 \wedge S2) \vee ("UE \wedge S2) \vee ("UE \wedge S1)
+	\end{equation}
+\section{Subtrahierer}
+\subsection{Halbsubtrahierer}
+\begin{tabular}{c|c||c|c}
+S1&S2&E&Ü\\
+\hline
+0&0&0&0\\
+0&1&1&1\\
+1&0&1&0\\
+1&1&0&0\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle Halbsubtrahierer}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{M}{S}&0&1\\
+\hline
+0&0&1\\
+\hline
+1&1&0\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Halbsubtrahierer Differenz}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{M}{S}&0&1\\
+\hline
+0&0&1\\
+\hline
+1&0&0\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Halbsubtrahierer Entleihung}
+\begin{equation}
+	D:= (S \wedge \overline{M}) \vee (\overline{S} \wedge M)
+\end{equation}
+\begin{equation}
+	E:= S \wedge \overline{M}
+\end{equation}
+\newpage
+\subsection{Vollsubtrahierer}
+\begin{tabular}{c|c|c||c|c}
+M&S&EE&D&EA\\
+\hline
+0&0&0&0&0\\
+0&0&1&1&1\\
+0&1&0&1&1\\
+0&1&1&0&1\\
+1&0&0&1&0\\
+1&0&1&0&0\\
+1&1&0&0&0\\
+1&1&1&1&1\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle Vollsubtrahierer}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{MS}{EE}&0&1\\
+\hline
+00&0&1\\
+\hline
+01&1&0\\
+\hline
+11&0&1\\
+\hline
+10&1&0\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Halbaddierer Differenz}
+\vspace{15mm}
+\begin{tabular}{c|c|c}
+\diagbox{MS}{EE}&0&1\\
+\hline
+00&0&1\\
+\hline
+01&1&1\\
+\hline
+11&0&1\\
+\hline
+10&0&0\\
+\end{tabular}
+\captionof{table}{KV-Diagramm Vollsubtrahierer Entleihung Ausgang}
+	\begin{equation}
+	D:= (EE \wedge \overline{M} \wedge \overline{S}) \vee (\overline{EE} \wedge \overline{M} \wedge S) \vee (EE \wedge M \wedge S) \vee (\overline{EE} \wedge M \wedge \overline{S})
+	\end{equation}
+	\begin{equation}
+	EA:= (EE \wedge \overline{M}) \vee (\overline{M} \wedge S) \vee (EE \wedge S)
+	\end{equation}
+\end{center}
+\newpage
+\section{Halb- und Volladdierer}
+Der Halbaddierer hat zwei, der Volladdierer drei Eingänge. Daher kann der Halbaddierer nur zwei einstellige Dualzahlen addieren, ohne einen Übertrag zu berücksichtigen. Da der Volladdierer einen Eingang mehr hat, kann er drei einstellige Dualzahlen, bzw. zwei mehrstellige Zahlen addieren. Beide haben je einen Ausgang für das Ergebnis und einen für den Übertrag.
+\section{Anzahl D-Flipflops}
+Man braucht fünf D-Flipflops, weil man 4-Bit-Dualzahlen und einen Übertrag berücksichtigen muss.
+\section{Taktzyklen Systemtakt}
+Man benötigt fünf Taktzyklen, damit die vier Ergebnisse und der Übertrag durch das Schieberegister geschoben werden können.
+\begin{center}
+\newpage
+\end{center}
+\section{Blockschaltbild 1}
+\includegraphics[width=1.35\columnwidth]{DT2Graphics/Blockschaltbild1.jpeg}
+\section{Blockschaltbild 2}
+\includegraphics[width=1.25\columnwidth]{DT2Graphics/Blockschaltbild2.jpeg}
+\section{Blockschaltbild 3}
+\includegraphics[width=1.2\columnwidth]{DT2Graphics/Blockschaltbild3.jpeg}
+\newpage
+\chapter{Kritische Schlussbetrachtung}
+\section{Olbrich, Marie}
+ \input{DT2Marie.tex}
+\section{Hoffmann, Manuel}
+ \input{DT2Manuel.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,5 +218,4 @@ S1&S2&ÜE&E&ÜA\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \end{document}

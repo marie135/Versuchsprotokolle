@@ -1,3 +1,18 @@
 \thispagestyle {scrheadings}
 \select@language {ngerman}
 \contentsline {chapter}{\numberline {1}Vorbereitende Aufgaben}{1}
+\contentsline {section}{\numberline {1.1}Addierer}{1}
+\contentsline {subsection}{\numberline {1.1.1}Halbaddierer}{1}
+\contentsline {subsection}{\numberline {1.1.2}Volladdierer}{2}
+\contentsline {section}{\numberline {1.2}Subtrahierer}{3}
+\contentsline {subsection}{\numberline {1.2.1}Halbsubtrahierer}{3}
+\contentsline {subsection}{\numberline {1.2.2}Vollsubtrahierer}{4}
+\contentsline {section}{\numberline {1.3}Halb- und Volladdierer}{5}
+\contentsline {section}{\numberline {1.4}Anzahl D-Flipflops}{5}
+\contentsline {section}{\numberline {1.5}Taktzyklen Systemtakt}{5}
+\contentsline {section}{\numberline {1.6}Blockschaltbild 1}{6}
+\contentsline {section}{\numberline {1.7}Blockschaltbild 2}{7}
+\contentsline {section}{\numberline {1.8}Blockschaltbild 3}{8}
+\contentsline {chapter}{\numberline {2}Kritische Schlussbetrachtung}{9}
+\contentsline {section}{\numberline {2.1}Olbrich, Marie}{9}
+\contentsline {section}{\numberline {2.2}Hoffmann, Manuel}{10}

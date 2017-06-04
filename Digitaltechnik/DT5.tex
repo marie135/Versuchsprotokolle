@@ -1,28 +1,117 @@
 % File: main.tex
 % Author: Auto-Intern GmbH
 % Manuals template
+
 \newcommand{\fach}{Digitaltechnikpraktikum }
 \newcommand{\titelname}{Versuchsprotokoll }
 \newcommand{\matrikel}{2016507006 }
 \newcommand{\name}{Olbrich, Marie }
 
-\newcommand{\matrikelpartner}{2015516619 }
+\newcommand{\matrikelpartner}{2016506999 }
 \newcommand{\namepartner}{Hoffmann, Manuel }
 
-\newcommand{\versuchsbezeichnung}{DT3 }
-\newcommand{\versuchsname}{Untersuchung von Flip-Flop-Arten }
+\newcommand{\versuchsbezeichnung}{DT5 }
+\newcommand{\versuchsname}{Entwurf eines 3-Bit Komparators }
 \newcommand{\semester}{SS17 }
-\newcommand{\datum}{18.04.2017 }
+\newcommand{\datum}{23.05.2017 }
 \newcommand{\betreuer}{M.Sc. Kruse }
 \newcommand{\dozent}{M.Sc. Richthofer }
 
 \documentclass[a4paper, 11pt, fleqn, DIV=10, twoside, BCOR=10mm]{scrreprt}
+\usepackage{diagbox}
+
 \input{../template.tex}
 \Deutsch
 \begin{document} 
 \AVier
+\begin{center}
+\chapter{Vorbereitende Aufgaben}
+\section{1-Bit-Komparator}
+\begin{tabular}{c||c|c||c|c|c}
+Fall:&A&B&X&Y&Z\\
+ & & &A>B&A=B&A<B\\
+\hline
+1&0&0&0&1&0\\
+2&0&1&0&0&1\\
+3&1&0&1&0&0\\
+4&1&1&0&1&0\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle zum 1-Bit-Komparator}
+\begin{equation}
+	X:= A \wedge \overline{B}
+\end{equation}
+\begin{equation}
+	Y:= (\overline{A} \wedge \overline{B}) \vee (A \wedge B)
+\end{equation}
+\begin{equation}
+	Z:= \overline{A} \wedge B
+\end{equation}
+\vspace{10mm}
 
+%
+\includegraphics[width=0.9\columnwidth]{DT5Graphics/1_Bit_Komperator.jpg}
+\captionof{figure}{1-Bit-Komparator}
+%
+\section{1-Bit-Komparator mit zusätzlichem Eingang E}
+\begin{tabular}{c||c|c|c||c|c|c}
+Fall:&E&A&B&X&Y&Z\\
+ & & & &A>B&A=B&A<B\\
+\hline
+1&0&0&0&0&0&0\\
+2&0&0&1&0&0&0\\
+3&0&1&0&0&0&0\\
+4&0&1&1&0&0&0\\
+5&1&0&0&0&1&0\\
+6&1&0&1&0&0&1\\
+7&1&1&0&1&0&0\\
+8&1&1&1&0&1&0\\
+\end{tabular}
+\captionof{table}{Wahrheitstabelle zum 1-Bit-Komparator mit zusätzl. Eingang E}
+\begin{equation}
+	X:= E \wedge A \wedge \overline{B}
+\end{equation}
+\begin{equation}
+	Y:= (E \wedge \overline{A} \wedge \overline{B}) \vee (E \wedge A \wedge B)
+\end{equation}
+\begin{equation}
+	Z:= E \wedge \overline{A} \wedge B
+\end{equation}
+\vspace{10mm}
 
+%
+\includegraphics[width=0.9\columnwidth]{DT5Graphics/1_Bit_Komperator_mit_E.jpg}
+\captionof{figure}{1-Bit-Komparator mit zusätzlichem Eingang E}
+%
+\section{3-Bit-Komparator}
+\vspace{10mm}
+\begin{tabular}{c|c|c|c|c|c|c}
+Fall:&2\textsuperscript{2}&2\textsuperscript{1}&2\textsuperscript{0}&X&Y&Z\\
+ &A\textsubscript{2}, B\textsubscript{2}&A\textsubscript{1}, B\textsubscript{1}&A\textsubscript{0}, B\textsubscript{0}&A>B&A=B&A<B\\
+\hline
+1&A\textsubscript{2}>B\textsubscript{2}&*&*&1&0&0\\
+2&A\textsubscript{2}<B\textsubscript{2}&*&*&0&0&1\\
+\hline
+3&A\textsubscript{2}=B\textsubscript{2}&A\textsubscript{1}>B\textsubscript{1}&*&1&0&0\\
+4&A\textsubscript{2}=B\textsubscript{2}&A\textsubscript{1}<B\textsubscript{1}&*&0&0&1\\
+\hline
+5&A\textsubscript{2}=B\textsubscript{2}&A\textsubscript{1}=B\textsubscript{1}&A\textsubscript{0}>B\textsubscript{0}&1&0&0\\
+6&A\textsubscript{2}=B\textsubscript{2}&A\textsubscript{1}=B\textsubscript{1}&A\textsubscript{0}<B\textsubscript{0}&0&0&1\\
+5&A\textsubscript{2}=B\textsubscript{2}&A\textsubscript{1}=B\textsubscript{1}&A\textsubscript{0}=B\textsubscript{0}&0&1&0\\
+\end{tabular}
+\captionof{table}{Verkürzte Wahrheitstabelle zum 3-Bit-Komparator}
+\vspace{20mm}
+
+%
+\includegraphics[width=1.25\columnwidth]{DT5Graphics/3_Bit_Komperator.jpg}
+\captionof{figure}{3-Bit-Komparator}
+%
+\end{center}
+\newpage
+\chapter{Kritische Schlussbetrachtung}
+\section{Olbrich, Marie}
+ \input{DT5Marie.tex}
+\section{Hoffmann, Manuel}
+ \input{DT5Manuel.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
